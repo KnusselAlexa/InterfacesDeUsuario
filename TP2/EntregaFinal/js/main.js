@@ -10,5 +10,6 @@ function startPage() {
     function openNavbar() {
         let navList = document.querySelector('.nav-bar');
         navList.classList.toggle("nav-bar-open");
+        navBtn.classList.toggle("rotate");
     }
 }
