@@ -4,61 +4,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Document</title>
+    <link rel="icon" href="./img/header/logoAkEm.png">
+    <link rel="stylesheet" href="css/style.css">
+    <title>AkEm-Games</title>
 </head>
 
 <body>
     <header>
-        <div class="header">
-            <div><img class="logoheader" src="./img/logoAkEm.png" alt="logoAkEm"></div>
-            <div>
-                <input class="boxsearch" type="text" placeholder="">
-                <img src="./img/header/loupe.png" alt="lupa">
-                <img src="./img/header/trolley.png" alt="mi carrito">
-                <img src="./img/header/userMenu.png" alt="menu Usuario">
-            </div>
+        <div class="login-header">
+            <img src="./img/header/logoAkEm.png" alt="logoAkEm" width="200px">
         </div>
     </header>
-    <aside>
-        <nav class="nav-bar">
-            <div class="div-btn">
-                <img src="./img/nav/MenuDer.png" alt="nav-bar-icon" id="nav-btn" class="btn-nav-bar">
+    <div class="first-form">
+        <div class="border-form">
+            <h3>¿Estas listo para jugar?</h3>
+            <div class="div-form-btn">
+                <img src="./img/icons/email.svg" alt="">
+                <button type="button" id="first-sign-btn">Registrate con email</button>
             </div>
-            <div>
-
+            <p>O BIEN</p>
+            <div class="div-form-btn">
+                <img src="./img/icons/facebook.svg" alt="">
+                <button type="button" id="">Continuar con Facebook</button>
             </div>
-        </nav>
-    </aside>
-    <div class="main-content"></div>
-    <footer>
-        <div>
-            <img class="logofooter" src="./img/logoAkEm.png" alt="logoAkEm">
+            <div class="div-form-btn">
+                <img src="./img/icons/google.svg" alt="">
+                <button type="button" id="">Continuar con Google</button>
+            </div>
+            <button type="button" id="first-login-btn" class="to-login-btn">¿Ya tienes una cuenta de AkEm Games? Click
+                aqui para iniciar sesión</button>
         </div>
-        <div>
-            <h3>Acerca de Nosotros:</h3>
-            <p>¡ Bienvenido a JuegosJuegos.com ! Estás en una de las webs más visitadas de España de juegos online
-                gratis, llevamos desde el año 2003 rastreando para tí todo Internet en busca de los mejores juegos,
-                añadimos al menos 6 nuevos juegos diarios y ya contamos en nuestro catálogo con más de 15.000 juegos
-                clasificados por categorías donde podrás ordenarlos por "más nuevos", "mejor valorados" y "más jugados"
-                para que no te pierdas ninguno.</p>
-        </div>
-        <div>
-            <h3>Seguinos:</h3>
-            <img src="./img/footer/facebook.png" alt="facebook logo">
-            <img src="./img/footer/instagram.png" alt="instagram logo">
-            <img src="./img/footer/twitter.png" alt="twitter logo">
-        </div>
-
-        <div>
-            <h3>Métodos de Pago</h3>
-            <h3>Avisos de privacidad</h3>
-            <h3>Ayuda</h3>
-            <h3>Contactanos</h3>
-        </div>
-
-    </footer>
-    <script src="./js/main.js"></script>
+    </div>
+    <div class="login-form oculto">
+        <form id="form-login" class="border-form">
+            <h3>Ingresar</h3>
+            <div class="input-container">
+                <label for="">Email</label>
+                <input type="text" required>
+            </div>
+            <div class="input-container">
+                <label for="">Contraseña</label>
+                <input type="password" required>
+            </div>
+            <div class="submit-div-login">
+                <span>¿Olvidaste tu contraseña?</span>
+                <button type="submit" id="login-btn" class="btn-principal">INGRESAR</button>
+            </div>
+        </form>
+    </div>
+    <div class="sign-form oculto">
+        <form id="form-register" class="border-form">
+            <h3>¿Estas listo para jugar?</h3>
+            <div class="input-container">
+                <label for="">Nombre *</label>
+                <input type="text" required>
+            </div>
+            <div class="input-container">
+                <label for="">Apellido *</label>
+                <input type="text" required>
+            </div>
+            <div class="input-container">
+                <label for="">Nickname</label>
+                <input type="text">
+            </div>
+            <div class="input-container">
+                <label for="">Edad *</label>
+                <input type="text" required>
+            </div>
+            <div class="input-container">
+                <label for="">Email *</label>
+                <input type="text" required>
+            </div>
+            <div class="input-container">
+                <label for="">Contraseña *</label>
+                <input type="text" required>
+            </div>
+            <div class="input-container">
+                <label for="">Repetir contraseña *</label>
+                <input type="text" required>
+            </div>
+            <div class="form-checkbox">
+                <input type="checkbox">
+                <label for="">Acepta terminos y condiciones</label>
+            </div>
+            <div class="div-captcha-main">
+                <div class="captcha-container">
+                    <input type="checkbox" required>
+                    <label for="">No soy un robot</label>
+                    <img src="./img/icons/captcha.svg" alt="">
+                </div>
+            </div>
+            <div class="submit-div-register">
+                <button type="submit" id="sign-btn" class="btn-principal">REGISTRATE</button>
+            </div>
+        </form>
+    </div>
+    <script src="./js/forms.js"></script>
 </body>
 
 </html>
