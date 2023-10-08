@@ -15,9 +15,13 @@ function startPage() {
     let menuUsuario = document.querySelector('#user-nav');
     let closeSessionBtn = document.querySelector('#close-session');
 
-    let navCategoriasH3 = document.querySelectorAll('.div-categorias h3');
+    let navCategoriasH3 = document.querySelectorAll('.nav-categorias h3');
 
     let btnPlay = document.querySelector("#play-btn-4inline");
+
+    let btnFooterHome = document.querySelector('#logo-foot');
+
+    btnFooterHome.addEventListener('click', navigateHome);
 
     homeLogo.addEventListener('click', navigateHome);
 
@@ -29,7 +33,7 @@ function startPage() {
 
     btnPlay.addEventListener('click', goGamePage);
 
-    closeSessionBtn.addEventListener('click', closeSession);
+    closeSessionBtn.addEventListener('click', navigateHome);
 
     function navigateHome() {
         window.location.replace("home.html");
@@ -61,9 +65,5 @@ function startPage() {
 
     function goGamePage() {
         window.location.replace("game.html");
-    }
-
-    function closeSession() {
-        window.location.replace("home.html");
     }
 }
