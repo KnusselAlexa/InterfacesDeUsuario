@@ -1178,16 +1178,13 @@ h3 {
     width: 120px;
 }
 
-.Sector2 {}
-
-.Sector3 {}
-
 .box-hacerComentario {
-    width: 975.6px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     background-color: rgba(242, 251, 255, 0.3);
     border-radius: 20pt;
     height: 100px;
-
 }
 
 .fechaCom {
@@ -1213,6 +1210,23 @@ h3 {
     line-height: normal;
     margin-left: 5px;
 }
+
+.Sector4 .box-comentario {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100px;
+
+}
+
+.Sector4 .encabezadoComent {
+    display: flex;
+}
+
+.Sector4 .cuerpoComent {
+    display: flex;
+}
+
 
 footer {
     width: 100%;
