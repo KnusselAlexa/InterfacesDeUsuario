@@ -1127,7 +1127,7 @@ h3 {
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 80%;
+    width: 75%;
     padding-top: 5%;
     margin: 0 auto;
 }
@@ -1173,13 +1173,13 @@ h3 {
 .box-imgs {
     display: flex;
     flex-direction: column;
-    height: 1125px;
     justify-content: space-around;
 }
 
 .box-imgs img {
-    height: 180px;
-    width: 319px;
+    border-radius: 12pt;
+    height: auto;
+    width: auto;
 }
 
 .Secto2 {
@@ -1192,14 +1192,7 @@ h3 {
 .tituloSector {
     display: flex;
     flex-direction: column;
-    align-items: start;
-    text-align: center;
     color: rgba(0, 174, 239, 0.75);
-    font-family: var(--ubuntu);
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
     margin-top: 5%;
 }
 
@@ -1236,7 +1229,7 @@ h3 {
     align-items: center;
     justify-content: center;
     font-family: Ubuntu;
-    font-size: 20px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -1263,7 +1256,7 @@ h3 {
 .encabezadoComent p {
     margin: 0;
     font-family: var(--ubuntu);
-    font-size: 20px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -1289,7 +1282,7 @@ h3 {
 .cuerpoComent p {
     margin: 0;
     font-family: Ubuntu;
-    font-size: 20px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -1376,7 +1369,7 @@ footer {
     color: var(--ColorPr, #00AEEF);
     text-align: center;
     font-family: Ubuntu;
-    font-size: 16px;
+    font-size: 12px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
