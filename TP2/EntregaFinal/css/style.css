@@ -1,15 +1,15 @@
 :root {
     --dark-blue: #022D3D;
     --light-blue: #6ED8FF;
+    --color-pr: #00AEEF;
     --orange: #FF9D32;
-    --colorSec2: #FF8500;
-    --OrangeO3: #A76217;
     --dark-orange: #CE7616;
+    --color-sec-2: #FF8500;
+    --orange-3: #A76217;
     --white: #e5e5e5;
     --red: #FC6884;
     --success-gree: #2cbb6d;
     --ubuntu: "Ubuntu";
-    --ColorPr: #00AEEF;
 }
 
 html {
@@ -152,7 +152,7 @@ body {
 
 .nav-bar {
     position: fixed;
-    height: 100vh;
+    height: 100%;
     width: 55px;
     z-index: 8;
     top: 0;
@@ -178,6 +178,14 @@ body {
 .btn-nav-bar {
     transition: 300ms;
     cursor: pointer;
+}
+
+.btn-nav-bar:hover {
+    filter: drop-shadow(2px 1px 1px rgba(4, 19, 34, 0.75));
+}
+
+.btn-nav-bar:active {
+    filter: none;
 }
 
 .nav-categorias {
@@ -357,8 +365,6 @@ h3 {
     flex-direction: column;
     align-items: center;
     margin-top: 15px;
-    position: absolute;
-    left: 35%;
 }
 
 .border-form {
@@ -568,6 +574,35 @@ h3 {
     border: 2px #2cbb6c70 solid;
     border-radius: 12px;
     box-shadow: 6px 6px 3px 2px rgba(4, 19, 34, 0.75), inset 0 -1em 1em rgba(0, 200, 0, 0.5);
+    animation-name: pop-up-animation;
+    animation-duration: 1700ms;
+}
+
+@keyframes pop-up-animation {
+    0% {
+        transform: scale(1.0);
+        transition: 100ms;
+    }
+
+    25% {
+        transform: scale(1.1);
+        transition: 100ms;
+    }
+
+    50% {
+        transform: scale(1.0);
+        transition: 100ms;
+    }
+
+    75% {
+        transform: scale(1.1);
+        transition: 100ms;
+    }
+
+    100% {
+        transform: scale(1.0);
+        transition: 100ms;
+    }
 }
 
 .pop-up-exitoso h3 {
@@ -579,7 +614,7 @@ h3 {
 }
 
 .spinner {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     display: flex;
@@ -733,8 +768,8 @@ h3 {
 }
 
 .card-description {
-    width: 220px;
-    height: 280px;
+    width: 200px;
+    height: 250px;
     background-color: var(--light-blue);
     border-radius: 10px;
 }
@@ -747,7 +782,7 @@ h3 {
 }
 
 .card-description-img img {
-    width: 220px;
+    width: 200px;
     height: 150px;
     object-fit: cover;
     border-radius: 10px 10px 0 0;
@@ -963,6 +998,11 @@ h3 {
     margin-left: 3px;
 }
 
+#sale-span {
+    margin-left: 3px;
+    position: initial;
+}
+
 .card-oferta span:first-child {
     text-decoration: line-through;
 }
@@ -1098,6 +1138,10 @@ h3 {
     display: flex;
 }
 
+.opacity-0 {
+    opacity: 0;
+}
+
 .opacity-transition {
     opacity: 0;
     transition: 300ms;
@@ -1115,6 +1159,10 @@ h3 {
 
 .z-index-5 {
     z-index: 5;
+}
+
+.z-index-max {
+    z-index: 10;
 }
 
 .form-hide {
@@ -1228,12 +1276,12 @@ h3 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: Ubuntu;
+    font-family: var(--ubuntu);
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    color: var(--ColorC1, #6ED8FF);
+    color: var(--light-blue);
 }
 
 .box-hacerComentario {
@@ -1262,7 +1310,7 @@ h3 {
     line-height: normal;
     flex-grow: 1;
     text-align: left;
-    color: var(--ColorSec2, #FF8500);
+    color: var(--color-sec-2);
 }
 
 .encabezadoComent .fechaCom {
@@ -1281,12 +1329,12 @@ h3 {
 
 .cuerpoComent p {
     margin: 0;
-    font-family: Ubuntu;
+    font-family: var(--ubuntu);
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    color: var(--ColorSec2, #FF8500);
+    color: var(--orange);
 }
 
 .cuerpoComent img {
@@ -1316,10 +1364,7 @@ h3 {
     align-items: center;
     gap: 10px;
     margin-right: 2%;
-
 }
-
-
 
 footer {
     width: 100%;
@@ -1329,7 +1374,6 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
 .footer {
@@ -1348,8 +1392,7 @@ footer {
 
 .foot-a img {
     padding-top: 5%;
-    width: 200px;
-    height: 200px;
+    cursor: pointer;
 }
 
 .foot-b {
@@ -1359,20 +1402,22 @@ footer {
 }
 
 .footer h3 {
-    color: var(--ColorPr, #00AEEF);
+    color: var(--color-pr);
     line-height: normal;
     margin-bottom: 10px;
+    margin-top: 0px;
 
 }
 
 .foot-b p {
-    color: var(--ColorPr, #00AEEF);
+    color: var(--color-pr);
     text-align: center;
-    font-family: Ubuntu;
+    font-family: var(--ubuntu);
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    padding: 0 5px 0 5px;
 }
 
 .foot-c {
@@ -1403,19 +1448,22 @@ footer {
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
 }
 
 .footer2 .foot-d {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
 .footer2 .foot-d h3 {
     margin: 0 20px;
-    color: var(--ColorPr, #00AEEF);
+    color: var(--color-pr);
     line-height: normal;
-    margin-bottom: 10px;
+    margin-bottom: 0.3%;
 }
 
 .footer2 .foot-d img {
@@ -1425,12 +1473,59 @@ footer {
     border-radius: 5pt;
 }
 
-@media screen and (min-width: 400) {}
+.footer-2-h3 {
+    display: flex;
+    justify-content: center;
+}
 
-@media screen and (min-width: 800px) {}
+@media screen and (min-width: 800px) {
+    .foot-b p {
+        font-size: 0.80rem;
+    }
 
-@media screen and (min-width: 1300px) {
+    .footer {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 25% 50% 25%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .card-description {
+        width: 220px;
+        height: 280px;
+        background-color: var(--light-blue);
+        border-radius: 10px;
+    }
+
+    .card-description-img img {
+        width: 220px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 10px 10px 0 0;
+        cursor: pointer;
+    }
+
+    footer {
+        padding: 0 10px 0 10px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
     .main-content {
         margin-left: 0;
     }
+
+    .footer2 .foot-d {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .foot-b p {
+        font-size: 0.85rem;
+    }
+
+
 }
