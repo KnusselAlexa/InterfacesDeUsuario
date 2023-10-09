@@ -7,6 +7,7 @@
     --red: #FC6884;
     --success-gree: #2cbb6d;
     --ubuntu: "Ubuntu";
+    --ColorPr: #00AEEF;
 }
 
 html {
@@ -1119,22 +1120,75 @@ h3 {
     overflow: hidden;
 }
 
-.footer {
-    height: 150px;
-    background: linear-gradient(180deg, #1D3C47 40.94%, rgba(27, 59, 71, 0.92) 86.25%, rgba(25, 57, 70, 0.84) 99.93%, rgba(21, 55, 68, 0.70) 99.94%);
-}
-
 /*body juego*/
-main .cuerpoJuego {
+.boxJuego {
     display: flex;
     justify-content: center;
-    background-color: #6ED8FF;
-    width: 840px;
-    height: 685px;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+}
+
+.Sector1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.contenedorJuego {
+    background-color: var(--light-blue);
+    border-radius: 12px;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.boxImgJuego img {
     border-radius: 12pt;
 }
 
-main .presentacionJuego img {
+.botoneraJuego ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.botoneraJuego ul li {
+    margin: 0 10px;
+}
+
+.botoneraJuego ul li a img {
+    width: 30px;
+    height: 30px;
+}
+
+.box-imgs {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 10px;
+}
+
+.box-imgs img {
+    height: 120px;
+    width: 120px;
+}
+
+.Sector2 {}
+
+.Sector3 {}
+
+.box-hacerComentario {
+    width: 100%;
+    background-color: rgba(242, 251, 255, 0.5);
+}
+
+
+
+/*
+.presentacionJuego img {
     border-radius: 12pt;
     margin-top: 5px;
 
@@ -1174,7 +1228,7 @@ main.pieDeJuego p {
     font-weight: 400;
     line-height: normal;
 }
-
+*/
 footer {
     width: 100%;
     background: linear-gradient(180deg, #1D3C47 40.94%, rgba(27, 59, 71, 0.92) 86.25%, rgba(25, 57, 70, 0.84) 99.93%, rgba(21, 55, 68, 0.70) 99.94%, rgba(17, 53, 67, 0.56) 99.95%, rgba(11, 50, 64, 0.31) 99.96%, rgba(3, 45, 61, 0.01) 99.97%, rgba(2, 45, 61, 0.00) 99.98%);
