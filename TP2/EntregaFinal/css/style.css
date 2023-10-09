@@ -1367,7 +1367,6 @@ h3 {
 }
 
 footer {
-    width: 100%;
     background: linear-gradient(180deg, #1D3C47 40.94%, rgba(27, 59, 71, 0.92) 86.25%, rgba(25, 57, 70, 0.84) 99.93%, rgba(21, 55, 68, 0.70) 99.94%, rgba(17, 53, 67, 0.56) 99.95%, rgba(11, 50, 64, 0.31) 99.96%, rgba(3, 45, 61, 0.01) 99.97%, rgba(2, 45, 61, 0.00) 99.98%);
     height: 100%;
     display: flex;
@@ -1377,10 +1376,9 @@ footer {
 }
 
 .footer {
-    display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: 25% 50% 25%;
-    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
