@@ -2,6 +2,8 @@
     --dark-blue: #022D3D;
     --light-blue: #6ED8FF;
     --orange: #FF9D32;
+    --colorSec2: #FF8500;
+    --OrangeO3: #A76217;
     --dark-orange: #CE7616;
     --white: #e5e5e5;
     --red: #FC6884;
@@ -1123,10 +1125,10 @@ h3 {
 /*body juego*/
 .boxJuego {
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 90%;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .Sector1 {
@@ -1181,54 +1183,37 @@ h3 {
 .Sector3 {}
 
 .box-hacerComentario {
-    width: 100%;
-    background-color: rgba(242, 251, 255, 0.5);
-}
-
-
-
-/*
-.presentacionJuego img {
-    border-radius: 12pt;
-    margin-top: 5px;
+    width: 975.6px;
+    background-color: rgba(242, 251, 255, 0.3);
+    border-radius: 20pt;
+    height: 100px;
 
 }
 
-.presentacionJuego .btnimg {
-    width: 25px;
-    height: 25px;
-    margin: 10px;
+.fechaCom {
+    text-decoration: var(--OrangeO3, #A76217);
 }
 
-
-main .presentacionJuego ul {
+.tituloSector div {
     display: flex;
-    justify-content: flex-end;
-
+    justify-content: start;
+    align-items: center;
 }
 
-main .presentacionJuego li {
-    list-style: none;
+.tituloSector .separador {
+    width: 100%;
 }
 
-main .pieDeJuego h3 {
+.tituloSector h3 {
     color: rgba(0, 174, 239, 0.75);
-    font-family: Ubuntu;
+    font-family: var(--ubuntu);
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    margin-left: 5px;
 }
 
-main.pieDeJuego p {
-    color: var(--ColorC1, #6ED8FF);
-    font-family: Ubuntu;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-*/
 footer {
     width: 100%;
     background: linear-gradient(180deg, #1D3C47 40.94%, rgba(27, 59, 71, 0.92) 86.25%, rgba(25, 57, 70, 0.84) 99.93%, rgba(21, 55, 68, 0.70) 99.94%, rgba(17, 53, 67, 0.56) 99.95%, rgba(11, 50, 64, 0.31) 99.96%, rgba(3, 45, 61, 0.01) 99.97%, rgba(2, 45, 61, 0.00) 99.98%);
