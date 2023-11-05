@@ -1,6 +1,7 @@
 :root {
     --dark-blue: #022D3D;
     --light-blue: #6ED8FF;
+    --light-blue-opacity: #6ED8FFC4;
     --color-pr: #00AEEF;
     --orange: #FF9D32;
     --dark-orange: #CE7616;
@@ -470,7 +471,8 @@ h3 {
 }
 
 .border-form .btn-principal,
-.div-btn-carrito .btn-principal {
+.div-btn-carrito .btn-principal,
+#form-juego .btn-principal {
     border: 1px var(--white) solid;
     border-radius: 17px;
     height: 40px;
@@ -485,7 +487,8 @@ h3 {
 }
 
 .border-form .btn-principal:hover,
-.div-btn-carrito .btn-principal:hover {
+.div-btn-carrito .btn-principal:hover,
+#form-juego .btn-principal:hover {
     background-color: var(--dark-orange);
     transform: translateY(-1px) translateX(-1px);
     transition: 50ms;
@@ -493,10 +496,9 @@ h3 {
 }
 
 .border-form .btn-principal:active,
-.div-btn-carrito .btn-principal:active {
+.div-btn-carrito .btn-principal:active #form-juego .btn-principal:active {
     transform: translateY(0px) translateX(0px);
     box-shadow: none;
-
 }
 
 .submit-div-login {
@@ -826,7 +828,9 @@ h3 {
     cursor: pointer;
 }
 
-.card-description-content div img:hover {
+.card-description-content div img:hover,
+#btn-jugar:hover,
+#btn-reset:hover {
     filter: drop-shadow(2px 1px 1px rgba(4, 19, 34, 0.75));
     animation-name: button-card-principal;
     animation-iteration-count: infinite;
@@ -1206,6 +1210,57 @@ canvas {
     justify-content: space-between;
 }
 
+#img-juego {
+    position: absolute;
+}
+
+.div-form-juego {
+    position: absolute;
+    z-index: 1;
+    width: 875px;
+    height: 650px;
+    background-color: var(--light-blue-opacity);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-form-juego form {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    gap: 20px;
+    padding: 10px;
+    background-color: var(--color-pr);
+    border: #022D3D solid 2px;
+    border-radius: 10px;
+}
+
+.div-form-juego form input,
+.div-form-juego form select {
+    border-radius: 5px;
+}
+
+.seleccion-jugador {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.contenedor-turno {
+    position: relative;
+    bottom: 30px;
+    left: -320px;
+    width: 200px;
+}
+
+.contenedor-temporizador {
+    position: relative;
+    bottom: 700px;
+    left: -320px;
+    width: 200px;
+}
+
 .botoneraJuego {
     width: 100%;
 }
@@ -1222,7 +1277,8 @@ canvas {
     margin: 0 10px;
 }
 
-.botoneraJuego ul li a img {
+.botoneraJuego ul li img {
+    cursor: pointer;
     width: 30px;
     height: 30px;
 }
@@ -1278,12 +1334,15 @@ canvas {
     margin-right: 20px;
 }
 
+.cuerpoSector.texto p {
+    margin: 5px;
+
+}
+
 .cuerpoSector p {
-    margin: 0;
     text-align: left;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     font-family: var(--ubuntu);
     font-size: 16px;
@@ -1479,6 +1538,10 @@ footer {
 .footer-2-h3 {
     display: flex;
     justify-content: center;
+}
+
+.display-none {
+    display: none;
 }
 
 @media screen and (min-width: 800px) {

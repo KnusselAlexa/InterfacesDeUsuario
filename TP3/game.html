@@ -179,37 +179,118 @@
             <div class="Sector1">
                 <div class="contenedorJuego">
                     <canvas id="canvas" width="875px" height="650px"></canvas>
+                    <img id="img-juego" src="./img/juegos/4-en-fila/img.svg" alt="portada 4 en fila" width="875px">
+                    <div class="div-form-juego display-none">
+                        <form id="form-juego" action="">
+                            <div class="seleccion-jugador">
+                                <label for="">Jugador uno</label>
+                                <input type="text" placeholder="Ingresa tu nombre" name="jugador-uno" required>
+                                <label for="">Selecciona tu piloto</label>
+                                <select name="img-jugador-uno" id="" required>
+                                    <option value="Verstappen">Max Verstappen</option>
+                                    <option value="Perez">Sergio Perez</option>
+                                    <option value="Leclerc">Charles Leclerc</option>
+                                    <option value="Sainz">Carlos Sainz</option>
+                                    <option value="Hamilton">Lewis Hamilton</option>
+                                    <option value="Russell">George Russell</option>
+                                    <option value="Norris">Lando Norris</option>
+                                    <option value="Piastri">Oscar Piastri</option>
+                                    <option value="Alonso">Fernando Alonso</option>
+                                    <option value="Stroll">Lance Stroll</option>
+                                    <option value="Gasly">Pierre Gasly</option>
+                                    <option value="Ocon">Esteban Ocon</option>
+                                    <option value="Tsunoda">Yuki Tsunoda</option>
+                                    <option value="DeVries">Nyck DeVries</option>
+                                    <option value="Magnussen">Kevin Magnussen</option>
+                                    <option value="Hulkenberg">Nicolas Hulkenberg</option>
+                                    <option value="GuanyuZhou">Zhou Guanyu</option>
+                                    <option value="Bottas">Valteri Bottas</option>
+                                    <option value="Albon">Alexander Albon</option>
+                                    <option value="Sargeant">Logan Sargeant</option>
+                                </select>
+                            </div>
+                            <div class="seleccion-jugador">
+                                <label for="">Jugador dos</label>
+                                <input type="text" placeholder="Ingresa tu nombre" name="jugador-dos" required>
+                                <label for="">Selecciona tu piloto</label>
+                                <select name="img-jugador-dos" id="" required>
+                                    <option value="Verstappen">Max Verstappen</option>
+                                    <option value="Perez">Sergio Perez</option>
+                                    <option value="Leclerc">Charles Leclerc</option>
+                                    <option value="Sainz">Carlos Sainz</option>
+                                    <option value="Hamilton">Lewis Hamilton</option>
+                                    <option value="Russell">George Russell</option>
+                                    <option value="Norris">Lando Norris</option>
+                                    <option value="Piastri">Oscar Piastri</option>
+                                    <option value="Alonso">Fernando Alonso</option>
+                                    <option value="Stroll">Lance Stroll</option>
+                                    <option value="Gasly">Pierre Gasly</option>
+                                    <option value="Ocon">Esteban Ocon</option>
+                                    <option value="Tsunoda">Yuki Tsunoda</option>
+                                    <option value="DeVries">Nyck DeVries</option>
+                                    <option value="Magnussen">Kevin Magnussen</option>
+                                    <option value="Hulkenberg">Nicolas Hulkenberg</option>
+                                    <option value="GuanyuZhou">Zhou Guanyu</option>
+                                    <option value="Bottas">Valteri Bottas</option>
+                                    <option value="Albon">Alexander Albon</option>
+                                    <option value="Sargeant">Logan Sargeant</option>
+                                </select>
+                            </div>
+                            <label>Tipo de juego</label>
+                            <div>
+                                <div>
+                                    <label for="">4 en linea</label>
+                                    <input type="radio" name="tipo-juego" value="7" required>
+                                </div>
+                                <div>
+                                    <label for="">5 en linea</label>
+                                    <input type="radio" name="tipo-juego" value="8" required>
+                                </div>
+                                <div>
+                                    <label for="">6 en linea</label>
+                                    <input type="radio" name="tipo-juego" value="9" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-principal">Jugar</button>
+                        </form>
+                    </div>
                     <div class="botoneraJuego">
                         <ul>
                             <li>
-                                <a href=""><img class="btnimg" src="./img/icons/joystick-oscuro.svg" alt=""></a>
+                                <img id="btn-jugar" class="btnimg" src="./img/icons/joystick-oscuro.svg" alt=""
+                                    title="Jugar">
                             </li>
                             <li>
-                                <a href=""><img class="btnimg" src="./img/icons/share-oscuro.svg" alt="compartir"></a>
+                                <img id="btn-reset" class="btnimg" src="./img/icons/reset.svg" alt="" title="Reset">
                             </li>
                             <li>
-                                <a href=""><img class="btnimg" src="./img/icons/like-oscuro.svg" alt="Me gusta"></a>
+                                <img class="btnimg" src="./img/icons/share-oscuro.svg" alt="compartir">
                             </li>
                             <li>
-                                <a href=""><img class="btnimg" src="./img/icons/dislike-oscuro.svg"
-                                        alt="No me gusta"></a>
+                                <img class="btnimg" src="./img/icons/like-oscuro.svg" alt="Me gusta">
                             </li>
                             <li>
-                                <a href="#controles"><img class="btnimg" src="./img/icons/Control.svg"
-                                        alt="controles"></a>
+                                <img class="btnimg" src="./img/icons/dislike-oscuro.svg" alt="No me gusta">
                             </li>
                             <li>
-                                <a href=""><img class="btnimg" src="./img/icons/favourite-oscuro.svg"
-                                        alt="Favoritos"></a>
+                                <img class="btnimg" src="./img/icons/Control.svg" alt="controles">
+                                <a href="#controles"></a>
                             </li>
                             <li>
-                                <a href=""><img class="btnimg" src="./img/icons/fullscreen-oscuro.svg"
-                                        alt="Pantalla completa"></a>
+                                <img class="btnimg" src="./img/icons/favourite-oscuro.svg" alt="Favoritos">
+                            </li>
+                            <li>
+                                <img class="btnimg" src="./img/icons/fullscreen-oscuro.svg" alt="Pantalla completa">
                             </li>
                         </ul>
                     </div>
+                    <div class="contenedor-turno">
+                        <span id="nombre-jugar-turno"></span>
+                    </div>
+                    <div class="contenedor-temporizador">
+                        <span id="juego-temporizador"></span>
+                    </div>
                 </div>
-
                 <div class="box-imgs">
                     <img src="img/juegos/4-en-fila/imagen-1.svg" alt="imagen del juego">
                     <img src="img/juegos/4-en-fila/video1.svg" alt="video del juego">
@@ -227,11 +308,21 @@
                         <img class="separador" src="./img/icons/line.svg" alt="linea">
                     </div>
                     <div class="cuerpoSector">
-                        <img src="./img/juegos/4-en-fila/instrucciones.svg" alt="Controles">
-                        <p>Desliza el mouse sobre la columna donde quieras ubicar la ficha. Haz click cuando quieras que
-                            la ficha caiga</p>
+                        <div>
+                            <img src="./img/icons/joystick-claro.svg" alt="joystick" width="50">
+                            <img src="./img/icons/mouse-click.svg" alt="Controles">
+                        </div>
+                        <div class="texto">
+                            <p>Haz click en el joystick paracomenzar a jugar. Luego ingresa tu nombre y el piloto que
+                                deseas, elije la dificultad que mas te guste.</p>
+                            <p>Para comenzar a jugar debes seleccionar la ficha que te corresponda y arrastrarla por la
+                                parte superior del tablero para posicionarte en la columna que deseas lanzarla, una vez
+                                que
+                                estes ahí sueltas el mouse y la ficha automaticamente caerá. No olvides que solo puedes
+                                mover tus fichas cuando sea tu turno! Apurate que el tiempo se termina!
+                                Si deseas reiniciar el juego presiona el boton de reseteo.</p>
+                        </div>
                     </div>
-
                 </div>
                 <div class="Sector3">
                     <div class="tituloSector">
@@ -243,17 +334,15 @@
                     </div>
                     <div class="cuerpoSector">
                         <p>Cuatro en Linea es un juego de habilidad para 1 o 2 jugadores en el que el tendrás como
-                            objetivo
-                            principal enfrentarte un duro oponente en un fantástico juego de lógica por turnos en el que
+                            objetivo principal enfrentarte un duro oponente en un fantástico juego de lógica por turnos
+                            en el que
                             deberás conseguir colocar cuatro de tus fichas iguales en línea antes de que lo consiga tu
-                            oponente.
-                            ¿Estás preparado para romperte el coco? Dispondrás de 2 minutos para alzarte con la victoria
-                            todas las
-                            veces posible, pero cuidado, ¡no te confíes! Ya que un pequeño despiste en tus movimientos
-                            puede
-                            ser fatal para ti.Selecciona la dificultad del juego eligiendo el tamaño del tablero y
-                            prepárate
-                            para pasarlo bien! Buena suerte...</p>
+                            oponente. ¿Estás preparado para romperte el coco? Dispondrás de 2 minutos para alzarte con
+                            la victoria
+                            todas las veces posible, pero cuidado, ¡no te confíes! Ya que un pequeño despiste en tus
+                            movimientos
+                            puede ser fatal para ti.Selecciona la dificultad del juego eligiendo el tamaño del tablero y
+                            prepárate para pasarlo bien! Buena suerte...</p>
                     </div>
                 </div>
 

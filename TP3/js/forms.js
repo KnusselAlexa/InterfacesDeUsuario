@@ -45,12 +45,12 @@ function startPage() {
         window.location.replace("home.html");
     });
 
-    function animationSuccess(msg) {
+    function animationSuccess(msg){
         popUp.classList.add("display-flex");
         popUp.classList.add("opacity-1-transition");
         document.querySelector("#success-msg").innerHTML = `¡Te has ${msg} exitosamente!`;
         setTimeout(() => {
             window.location.replace("home.html");
-        }, 2000);
+        },2000);
     }
 }

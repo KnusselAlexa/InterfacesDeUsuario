@@ -1,28 +1,37 @@
-class Jugador {
+class Jugador{
 
     #nombre;
     #imagenFicha;
-
-    constructor(nombre, imagenFicha) {
+    #turno;
+    
+    constructor(nombre, imagenFicha, turno){
         this.#nombre = nombre;
         this.#imagenFicha = imagenFicha;
+        this.#turno = turno;
     }
 
-    get nombre() {
+    get nombre(){
         return this.#nombre;
     }
 
-    get imagenFicha() {
+    get imagenFicha(){
         return this.#imagenFicha;
     }
-
-    set nombre(nombre) {
+    
+    get turno(){
+        return this.#turno;
+    }
+    set nombre(nombre){
         this.#nombre = nombre;
     }
 
-    set imagenFicha(imagenFicha) {
+    set imagenFicha(imagenFicha){
         this.#imagenFicha = imagenFicha;
+    }
+
+    set turno(turno){
+        this.#turno = turno;
     }
 }
 
-export { Jugador }
+export {Jugador}
