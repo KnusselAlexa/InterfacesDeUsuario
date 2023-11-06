@@ -33,7 +33,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //Boton reset
     let btnReset = document.querySelector("#btn-reset");
-    btnReset.addEventListener("click", resetearJuego);
+    btnReset.addEventListener("click", mostrarPopup, resetearJuego);
+
+    // Boton confirmar reset
+    let btnConfirmarReset = document.querySelector("#confirmar-reset");
+    btnConfirmarReset.addEventListener("click", resetearJuego);
+
+    // Boton cancelar reset
+    let btnCancelarReset = document.querySelector("#cancelar-reset");
+    btnCancelarReset.addEventListener("click", cerrarPopup);
 
     //Boton cerrar form
     let btnCerrar = document.querySelector("#img-cerrar");
@@ -111,8 +119,19 @@ document.addEventListener('DOMContentLoaded', () => {
     let firstTime = true;
     let reset = false;
 
+    //funcion para confirmar reset de juego
+    function mostrarPopup() {
+        let popup = document.querySelector("#popup-confirmacion");
+        popup.style.display = "block";
+    }
+    function cerrarPopup() {
+        let popup = document.querySelector("#popup-confirmacion");
+        popup.style.display = "none";
+    }
+
     //Vuelve a estado 0 el juego, para volver a empezar una nueva partida.
     function resetearJuego() {
+        cerrarPopup();
         if (jugando) {
             formJugar.reset();
             imgJuego.classList.remove("display-none");
@@ -126,6 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
             spanTurnoActual.innerHTML = "";
             divGanador.classList.add("display-none");
             firstTime = true;
+
         }
     }
 
