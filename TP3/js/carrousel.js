@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', startPage);
 function startPage() {
-    
+
     "use strict"
 
     let prevBtn = document.querySelectorAll(".prev-btn");
@@ -10,8 +10,8 @@ function startPage() {
     let cards;
     let firstImgWidth = 150 + 10;
 
-    prevBtn.forEach( btn => {
-        btn.addEventListener('click', function(){
+    prevBtn.forEach(btn => {
+        btn.addEventListener('click', function () {
             cards = [...this.nextElementSibling.children];
 
             cards.forEach(c => {
@@ -30,20 +30,20 @@ function startPage() {
         })
     });
 
-    nextBtn.forEach( btn => {
-        btn.addEventListener('click', function(){
+    nextBtn.forEach(btn => {
+        btn.addEventListener('click', function () {
             cards = [...this.previousElementSibling.children];
 
             cards.forEach(c => {
                 c.classList.add("animation-carousel-right");
             });
 
-            if(this.previousElementSibling.scrollLeft < 480){
+            if (this.previousElementSibling.scrollLeft < 480) {
                 this.previousElementSibling.scrollLeft += firstImgWidth;
                 setTimeout(() => {
                 }, 50);
             }
-            
+
             setTimeout(() => {
                 cards.forEach(c => {
                     c.classList.remove("animation-carousel-right");
@@ -52,15 +52,15 @@ function startPage() {
         })
     });
 
-    imgsCarousel.forEach( img => {
-        img.addEventListener('mouseover', (e)=>{
+    imgsCarousel.forEach(img => {
+        img.addEventListener('mouseover', (e) => {
             e.target.classList.add("carrousel-hovered");
             e.target.classList.add("scale");
             e.target.nextElementSibling.classList.add("z-index-5");
             e.target.nextElementSibling.classList.add("scale");
             e.target.parentNode.classList.add("scale");
         });
-        img.addEventListener("mouseout",  (e)=>{
+        img.addEventListener("mouseout", (e) => {
             e.target.classList.remove("carrousel-hovered");
             e.target.classList.remove("scale");
             e.target.nextElementSibling.classList.remove("z-index-5");

@@ -6,17 +6,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     "use strict";
 
-    //Elementos juego
+    //Variables juego
     let imgJuego = document.querySelector("#img-juego");
     let nombreJugadorUno;
     let nombreJugadorDos;
     let imagenJugadorUno;
     let imagenJugadorDos;
     let tipoJuego;
+    let jugando = false;
 
     //Nombre jugador turno actual
+    let divTurnoActual = document.querySelector(".contenedor-turno");
     let spanTurnoActual = document.querySelector("#nombre-jugar-turno");
+
+    //Temporizador
+    let divTemporizador = document.querySelector(".contenedor-temporizador");
     let spanTemporizador = document.querySelector("#juego-temporizador");
+
+    //Ganador
+    let divGanador = document.querySelector(".contenedor-ganador");
+    let h3Ganador = document.querySelector("#h3-ganador");
 
     //Boton jugar
     let btnJugar = document.querySelector("#btn-jugar");
@@ -25,6 +34,10 @@ document.addEventListener('DOMContentLoaded', () => {
     //Boton reset
     let btnReset = document.querySelector("#btn-reset");
     btnReset.addEventListener("click", resetearJuego);
+
+    //Boton cerrar form
+    let btnCerrar = document.querySelector("#img-cerrar");
+    btnCerrar.addEventListener("click", cerrarForm);
 
     //From juego
     let divFormJuego = document.querySelector(".div-form-juego");
@@ -35,6 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
         divFormJuego.classList.remove("display-none");
     }
 
+    function cerrarForm() {
+        divFormJuego.classList.add("display-none");
+    }
+
+    //Funcion que es llamada por el evento submit del formulario, aqui se toman los valores de inicializacion del juego y
+    //se llama a otra funcion para iniciar el juego en si.
     function empezarJuego(e) {
         e.preventDefault();
 
@@ -52,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
             alert("seleccione pilotos diferentes");
         } else {
             divFormJuego.classList.add("display-none");
+            divTurnoActual.classList.remove("display-none");
             imgJuego.classList.add("display-none");
             empezar();
         }
@@ -91,17 +111,25 @@ document.addEventListener('DOMContentLoaded', () => {
     let firstTime = true;
     let reset = false;
 
+    //Vuelve a estado 0 el juego, para volver a empezar una nueva partida.
     function resetearJuego() {
-        formJugar.reset();
-        imgJuego.classList.remove("display-none");
-        divFormJuego.classList.add("display-none");
-        fichas = [];
-        casillaCantidad = 0;
-        reiniciarCanvas();
-        reset = true;
-        spanTurnoActual.innerHTML = "";
+        if (jugando) {
+            formJugar.reset();
+            imgJuego.classList.remove("display-none");
+            divFormJuego.classList.add("display-none");
+            divTurnoActual.classList.add("display-none");
+            fichas = [];
+            casillaCantidad = 0;
+            reiniciarCanvas();
+            reset = true;
+            jugando = false;
+            spanTurnoActual.innerHTML = "";
+            divGanador.classList.add("display-none");
+            firstTime = true;
+        }
     }
 
+    //Instanciacion de cada parte y arranque del juego.
     function empezar() {
         jugadorUno = new Jugador(nombreJugadorUno, imagenJugadorUno, true);
         jugadorDos = new Jugador(nombreJugadorDos, imagenJugadorDos, false);
@@ -114,8 +142,10 @@ document.addEventListener('DOMContentLoaded', () => {
         tablero.dibujarTablero();
         prepararFichas();
         reset = false;
+        jugando = true;
         iniciarTemporizador(300);
     }
+
     //Temporizador
     function iniciarTemporizador(segundos) {
         divTemporizador.classList.remove("display-none");
@@ -124,8 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
             spanTemporizador.innerHTML = "";
         } else if (segundos >= 0) {
             setTimeout(() => {
-                spanTemporizador.style.cssText = "background-color: #e5e5e5; border: 2px solid #000000; border-radius: 5px; padding: 1px";
-                spanTemporizador.innerHTML = `Restan ${segundos} segs.`;
+                spanTemporizador.innerHTML = `${segundos} segs.`;
                 iniciarTemporizador(segundos - 1);
             }, 1000);
         } else {
@@ -134,6 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    //Utilizando las variables previamente seteadas, se preparan las fichas y se guardan en un arreglo, luego se dibuja el juego.
     function prepararFichas() {
         let posicionXComienzo = tablero.posicionXenCanvas / 2;
         let posicionXFin = canvasWidth - tablero.posicionXenCanvas / 2;
@@ -157,6 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
         dibujarJuego();
     }
 
+    //Se dibuja el tablero y se recorre el arreglo de fichas, dibujando cada una de las mismas.
     function dibujarJuego() {
         reiniciarCanvas();
         tablero.dibujarTablero();
@@ -164,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
             fichas.forEach(f => {
                 setTimeout(() => {
                     f.dibujar();
-                }, 50)
+                }, 200)
             });
             firstTime = false;
         } else {
@@ -217,6 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    //Manejo de animacion de caida de la ficha, control de turnos
     function tirarFicha() {
         dibujarJuego();
         if (fichaClickeada != null && fichaClickeada.y < coordY) {
@@ -227,29 +259,42 @@ document.addEventListener('DOMContentLoaded', () => {
             fichaClickeada.setPosicion(fichaClickeada.x, coordY);
             dibujarJuego();
             window.cancelAnimationFrame(caida);
+            controlTurno();
+            controlGanador();
+        }
+    }
 
-            //Control de turno
-            if (jugadorUno.turno) {
-                jugadorUno.turno = false;
-                jugadorDos.turno = true;
-                jugadorActual = jugadorDos;
-                spanTurnoActual.innerHTML = `Turno actual: ${jugadorActual.nombre}`;
-            } else if (jugadorDos.turno) {
-                jugadorUno.turno = true;
-                jugadorDos.turno = false;
-                jugadorActual = jugadorUno;
-                spanTurnoActual.innerHTML = `Turno actual: ${jugadorActual.nombre}`;
-            }
+    //Control de turno
+    function controlTurno() {
+        if (jugadorUno.turno) {
+            jugadorUno.turno = false;
+            jugadorDos.turno = true;
+            jugadorActual = jugadorDos;
+            spanTurnoActual.innerHTML = `Turno actual: ${jugadorActual.nombre}`;
+        } else if (jugadorDos.turno) {
+            jugadorUno.turno = true;
+            jugadorDos.turno = false;
+            jugadorActual = jugadorUno;
+            spanTurnoActual.innerHTML = `Turno actual: ${jugadorActual.nombre}`;
+        }
+    }
 
-            let fichasGanadoras = tablero.esFichaGanadora(fichaClickeada);
-            if (fichasGanadoras != null) {
-                fichasGanadoras.forEach(f => {
-                    f.resaltar();
-                    f.dibujar();
-                });
-            } else {
-                iniciarEventos();
-            }
+    //Chequeo de ganador
+    function controlGanador() {
+        let fichasGanadoras = tablero.esFichaGanadora(fichaClickeada);
+        let ganador;
+        if (fichasGanadoras != null) {
+            ganador = fichasGanadoras[0].jugador;
+            fichasGanadoras.forEach(f => {
+                f.resaltar();
+                f.dibujar();
+            });
+            divGanador.classList.remove("display-none");
+            h3Ganador.innerHTML = `${ganador.nombre} has ganado!!!`;
+            reset = true;
+            spanTurnoActual.innerHTML = "";
+        } else {
+            iniciarEventos();
         }
     }
 

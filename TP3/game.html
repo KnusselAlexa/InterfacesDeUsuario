@@ -182,15 +182,16 @@
                     <img id="img-juego" src="./img/juegos/4-en-fila/img.svg" alt="portada 4 en fila" width="875px">
                     <div class="div-form-juego display-none">
                         <form id="form-juego" action="">
+                            <img src="./img/icons/close.svg" alt="cerrar" id="img-cerrar" width="25px">
                             <div class="seleccion-jugador">
                                 <label for="">Jugador uno</label>
                                 <input type="text" placeholder="Ingresa tu nombre" name="jugador-uno" required>
                                 <label for="">Selecciona tu piloto</label>
                                 <select name="img-jugador-uno" id="" required>
-                                    <option value="Verstappen">Max Verstappen</option>
-                                    <option value="Perez">Sergio Perez</option>
                                     <option value="Leclerc">Charles Leclerc</option>
                                     <option value="Sainz">Carlos Sainz</option>
+                                    <option value="Verstappen">Max Verstappen</option>
+                                    <option value="Perez">Sergio Perez</option>
                                     <option value="Hamilton">Lewis Hamilton</option>
                                     <option value="Russell">George Russell</option>
                                     <option value="Norris">Lando Norris</option>
@@ -214,10 +215,10 @@
                                 <input type="text" placeholder="Ingresa tu nombre" name="jugador-dos" required>
                                 <label for="">Selecciona tu piloto</label>
                                 <select name="img-jugador-dos" id="" required>
-                                    <option value="Verstappen">Max Verstappen</option>
-                                    <option value="Perez">Sergio Perez</option>
                                     <option value="Leclerc">Charles Leclerc</option>
                                     <option value="Sainz">Carlos Sainz</option>
+                                    <option value="Verstappen">Max Verstappen</option>
+                                    <option value="Perez">Sergio Perez</option>
                                     <option value="Hamilton">Lewis Hamilton</option>
                                     <option value="Russell">George Russell</option>
                                     <option value="Norris">Lando Norris</option>
@@ -284,11 +285,16 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="contenedor-turno">
+                    <div class="contenedor-turno display-none">
                         <span id="nombre-jugar-turno"></span>
                     </div>
                     <div class="contenedor-temporizador display-none">
                         <span id="juego-temporizador"></span>
+                    </div>
+                    <div class="contenedor-ganador display-none">
+                        <div class="cartel">
+                            <h3 id="h3-ganador"></h3>
+                        </div>
                     </div>
                 </div>
                 <div class="box-imgs">
@@ -334,18 +340,19 @@
                     </div>
                     <div class="cuerpoSector">
                         <p>Cuatro en Linea es un juego de habilidad para 1 o 2 jugadores en el que el tendrás como
-                            objetivo principal enfrentarte un duro oponente en un fantástico juego de lógica por turnos
-                            en el que
+                            objetivo
+                            principal enfrentarte un duro oponente en un fantástico juego de lógica por turnos en el que
                             deberás conseguir colocar cuatro de tus fichas iguales en línea antes de que lo consiga tu
-                            oponente. ¿Estás preparado para romperte el coco? Dispondrás de 2 minutos para alzarte con
-                            la victoria
-                            todas las veces posible, pero cuidado, ¡no te confíes! Ya que un pequeño despiste en tus
-                            movimientos
-                            puede ser fatal para ti.Selecciona la dificultad del juego eligiendo el tamaño del tablero y
-                            prepárate para pasarlo bien! Buena suerte...</p>
+                            oponente.
+                            ¿Estás preparado para romperte el coco? Dispondrás de 2 minutos para alzarte con la victoria
+                            todas las
+                            veces posible, pero cuidado, ¡no te confíes! Ya que un pequeño despiste en tus movimientos
+                            puede
+                            ser fatal para ti.Selecciona la dificultad del juego eligiendo el tamaño del tablero y
+                            prepárate
+                            para pasarlo bien! Buena suerte...</p>
                     </div>
                 </div>
-
                 <div class="Sector4">
                     <div class="tituloSector">
                         <div>
@@ -468,7 +475,7 @@
     </footer>
     <script src="./js/main.js"></script>
     <script src="./js/carrousel.js"></script>
-    <script type="module" src="./js/juego.js"></script>
+    <script id="script-juego" type="module" src="./js/juego.js"></script>
 </body>
 
 </html>

@@ -486,6 +486,10 @@ h3 {
     transition: 50ms;
 }
 
+#form-juego .btn-principal {
+    font-size: 1.5rem;
+}
+
 .border-form .btn-principal:hover,
 .div-btn-carrito .btn-principal:hover,
 #form-juego .btn-principal:hover {
@@ -1236,6 +1240,13 @@ canvas {
     border-radius: 10px;
 }
 
+.div-form-juego form img {
+    position: relative;
+    left: 180px;
+    top: -5px;
+    cursor: pointer;
+}
+
 .div-form-juego form input,
 .div-form-juego form select {
     border-radius: 5px;
@@ -1247,11 +1258,58 @@ canvas {
     gap: 5px;
 }
 
+.contenedor-turno {
+    position: relative;
+    bottom: 38px;
+    left: -120px;
+    color: #022D3D;
+    background-color: var(--orange);
+    width: auto;
+    border-radius: 5px;
+    border: #000000 solid 2px;
+    padding: 2px 10px 2px 10px;
+    font-size: large;
+}
+
 .contenedor-temporizador {
     position: relative;
-    bottom: 700px;
-    left: -340px;
-    width: 200px;
+    bottom: 720px;
+    left: -385px;
+    background-color: var(--orange);
+    width: auto;
+    border-radius: 5px;
+    border: #000000 solid 2px;
+    padding: 2px 10px 2px 10px;
+    font-size: large;
+}
+
+.contenedor-ganador {
+    display: flex;
+    position: absolute;
+    width: 875px;
+    background-color: #00AEEFB4;
+    height: 650px;
+    z-index: 4;
+    border-radius: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-ganador .cartel {
+    display: flex;
+    width: 500px;
+    height: 80px;
+    background-color: #022D3DE2;
+    border-radius: 12px;
+    justify-content: center;
+    align-items: center;
+    border: var(--dark-orange) solid 2px;
+}
+
+.contenedor-ganador .cartel h3 {
+    color: var(--dark-orange);
+    font-style: var(--ubuntu);
+    font-size: 25px;
 }
 
 .botoneraJuego {
@@ -1286,19 +1344,6 @@ canvas {
     border-radius: 12pt;
     height: auto;
     width: auto;
-}
-
-.contenedor-turno {
-    position: relative;
-    bottom: 35px;
-    left: -120px;
-    color: #022D3D;
-    background-color: var(--orange);
-    width: auto;
-    border-radius: 5px;
-    border: #000000 solid 2px;
-    padding: 0 4px 0 4px;
-    font-size: large;
 }
 
 .tituloSector {
@@ -1366,7 +1411,6 @@ canvas {
     align-items: center;
     margin-bottom: 1%;
 }
-
 
 .encabezadoComent p {
     margin: 0;
