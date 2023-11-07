@@ -391,7 +391,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    //muestra spinner mientras se carga el tablero del juego con las fichas
     function spinner() {
 
         let divSpinnerNode = document.createElement("div");
