@@ -14,8 +14,10 @@ class Tablero {
     #tableroLogica;
     #altoTablero;
     #fichas;
+    #img;
+    #fondo;
 
-    constructor(ctx, casillaCantidad, casillaAnchoYAlto, canvasWidth, canvasHeight) {
+    constructor(ctx, casillaCantidad, casillaAnchoYAlto, canvasWidth, canvasHeight, img, fondo) {
         this.#ctx = ctx;
         this.#casillaCantidad = casillaCantidad;
         this.#casillaAnchoYAlto = casillaAnchoYAlto;
@@ -26,6 +28,8 @@ class Tablero {
         this.crearTableroLogica();
         this.#altoTablero = this.#casillaAnchoYAlto * this.#casillaCantidad - 1;
         this.#fichas = [];
+        this.#img = img;
+        this.#fondo = fondo;
     }
 
     get ctx() {
@@ -68,9 +72,18 @@ class Tablero {
         return this.#altoTablero;
     }
 
+    get img() {
+        return this.#img;
+    }
+
+    get fondo() {
+        return this.#fondo;
+    }
+
     //Dibujar tablero inicia definiendo variables que va a utilizar y luego se recorre a si mismo como una matriz, dibujando
     //cada casillero. Luego llama a una funcion para setear las medidas correspondientes a cada columna.
     dibujarTablero() {
+        this.ctx.drawImage(this.fondo, 0, 0, this.canvasWidth, this.canvasHeight);
 
         let cantidadCasillasX = this.casillaCantidad;
         let cantidadCasillasY = cantidadCasillasX - 1;
@@ -78,34 +91,59 @@ class Tablero {
         let tamanioTableroX = cantidadCasillasX * this.casillaAnchoYAlto;
         let tamanioTableroY = cantidadCasillasY * this.casillaAnchoYAlto;
 
-        //Este if controla que el tamaño total del tablero, no exceda el ancho de canvas - 100px.
-        if (tamanioTableroX < (this.canvasWidth - 100)) {
+        this.#posicionXenCanvas = (this.canvasWidth - tamanioTableroX) / 2;
+        this.#posicionYenCanvas = (this.canvasHeight - tamanioTableroY) / 2;
 
-            this.#posicionXenCanvas = (this.canvasWidth - tamanioTableroX) / 2;
-            this.#posicionYenCanvas = (this.canvasHeight - tamanioTableroY) / 2;
+        let posicionX = this.#posicionXenCanvas;
+        let posicionY = this.#posicionYenCanvas;
 
-            let posicionX = this.#posicionXenCanvas;
-            let posicionY = this.#posicionYenCanvas;
+        for (let x = 0; x < cantidadCasillasX; x++) {
 
-            for (let x = 0; x < cantidadCasillasX; x++) {
-
-                for (let y = 0; y < cantidadCasillasY; y++) {
-                    this.dibujarRectangulo('darkblue', posicionX, posicionY);
-                    posicionY += this.casillaAnchoYAlto;
-                }
-                posicionY = this.#posicionYenCanvas;
-                posicionX += this.casillaAnchoYAlto;
+            for (let y = 0; y < cantidadCasillasY; y++) {
+                this.dibujarRectangulo('grey', posicionX, posicionY);
+                posicionY += this.casillaAnchoYAlto;
             }
+            posicionY = this.#posicionYenCanvas;
+            posicionX += this.casillaAnchoYAlto;
+
         }
         this.completarPosicionesColumnas();
+    }
+
+    dibujarTableroFrente() {
+
+        let cantidadCasillasX = this.casillaCantidad;
+        let cantidadCasillasY = cantidadCasillasX - 1;
+
+        let tamanioTableroX = cantidadCasillasX * this.casillaAnchoYAlto;
+        let tamanioTableroY = cantidadCasillasY * this.casillaAnchoYAlto;
+
+        this.#posicionXenCanvas = (this.canvasWidth - tamanioTableroX) / 2;
+        this.#posicionYenCanvas = (this.canvasHeight - tamanioTableroY) / 2;
+
+        let posicionX = this.#posicionXenCanvas;
+        let posicionY = this.#posicionYenCanvas;
+
+        for (let x = 0; x < cantidadCasillasX; x++) {
+
+            for (let y = 0; y < cantidadCasillasY; y++) {
+                this.dibujarRectanguloImagen(posicionX, posicionY);
+                posicionY += this.casillaAnchoYAlto;
+            }
+            posicionY = this.#posicionYenCanvas;
+            posicionX += this.casillaAnchoYAlto;
+
+        }
     }
 
     dibujarRectangulo(fill, x, y) {
         this.ctx.fillStyle = fill;
         this.ctx.lineWidth = 1;
         this.ctx.fillRect(x, y, this.casillaAnchoYAlto, this.casillaAnchoYAlto);
-        this.ctx.strokeStyle = "black";
-        this.ctx.strokeRect(x, y, this.casillaAnchoYAlto, this.casillaAnchoYAlto);
+    }
+
+    dibujarRectanguloImagen(x, y) {
+        this.ctx.drawImage(this.img, x, y, this.#casillaAnchoYAlto, this.#casillaAnchoYAlto);
     }
 
     //Llena el arreglo con las coordenadas x para detenerminar las x de cada columna
@@ -315,6 +353,12 @@ class Tablero {
             for (let x = 0; x < this.#casillaCantidad; x++) {
                 this.#tableroLogica[y][x] = null;
             }
+        }
+    }
+
+    cargarImagen() {
+        this.img.onload = () => {
+            this.ctx.drawImage(this.img, this.x - this.radio, this.y - this.radio, this.radio * 2, this.radio * 2);
         }
     }
 }

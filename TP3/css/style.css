@@ -9,7 +9,7 @@
     --orange-3: #A76217;
     --white: #e5e5e5;
     --red: #FC6884;
-    --success-gree: #2cbb6d;
+    --success-green: #2cbb6d;
     --ubuntu: "Ubuntu";
 }
 
@@ -585,23 +585,21 @@ h3 {
 }
 
 .popup-reset {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    display: flex;
+    position: absolute;
+    width: 875px;
+    height: 650px;
+    z-index: 4;
+    border-radius: 12px;
+    justify-content: center;
+    align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
 }
 
 .popup-contenido {
     background-color: #f9b771;
-    width: 25%;
+    width: 350px;
     height: 150px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -610,19 +608,18 @@ h3 {
     border: var(--dark-blue) solid 2px;
 }
 
-#popup-confirmacion button {
+.popup-reset button {
     display: flex;
     border-radius: 12px;
     margin: 10px;
     background-color: #a0a0a0;
 }
 
-#popup-confirmacion button:hover {
+.popup-reset button:hover {
     transform: translate(-0.6px, -0.6px);
     box-shadow: 2px 2px 2px 0 rgb(62, 63, 62);
     background-color: #CE7616;
 }
-
 
 @keyframes pop-up-animation {
     0% {
@@ -1275,7 +1272,7 @@ canvas {
     width: 200px;
     gap: 20px;
     padding: 10px;
-    background-color: var(--success-gree);
+    background-color: var(--success-green);
     border: var(--dark-blue) solid 2px;
     border-radius: 10px;
 }
@@ -1300,25 +1297,25 @@ canvas {
 
 .contenedor-turno {
     position: relative;
-    bottom: 38px;
+    bottom: 34px;
     left: -120px;
-    color: var(--dark-blue);
+    color: #022D3D;
     background-color: var(--orange);
     width: auto;
-    border-radius: 5px;
-    border: var(--dark-blue) solid 2px;
+    border-radius: 12px;
+    border: #000000 solid 2px;
     padding: 2px 10px 2px 10px;
     font-size: large;
 }
 
 .contenedor-temporizador {
     position: relative;
-    bottom: 720px;
+    bottom: 719px;
     left: -385px;
     background-color: var(--orange);
     width: auto;
-    border-radius: 5px;
-    border: var(--dark-blue) solid 2px;
+    border-radius: 12px;
+    border: #000000 solid 2px;
     padding: 2px 10px 2px 10px;
     font-size: large;
 }
@@ -1374,16 +1371,23 @@ canvas {
     height: 30px;
 }
 
+.botoneraJuego ul li .btn-fijo:hover {
+    transform: translate(-0.6px, -0.6px);
+    box-shadow: 2px 2px 2px 0 var(--light-blue);
+}
+
 .box-imgs {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin-left: 15px;
 }
 
 .box-imgs img {
-    border-radius: 12pt;
-    height: auto;
-    width: auto;
+    border-radius: 12px;
+    width: 151px;
+    height: 153px;
+    cursor: pointer;
 }
 
 .tituloSector {
