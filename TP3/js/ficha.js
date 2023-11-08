@@ -1,4 +1,4 @@
-class Ficha {
+class Ficha{
 
     /** @type {CanvasRenderingContext2D} */
     #ctx;
@@ -9,7 +9,7 @@ class Ficha {
     #jugador;
     #img;
 
-    constructor(ctx, img, x, y, radio) {
+    constructor(ctx, img, x, y, radio){
         this.#ctx = ctx;
         this.#x = x;
         this.#y = y;
@@ -18,51 +18,51 @@ class Ficha {
         this.#img = img;
     }
 
-    get ctx() {
+    get ctx(){
         return this.#ctx;
     }
 
-    get img() {
+    get img(){
         return this.#img;
     }
 
-    get x() {
+    get x(){
         return this.#x;
     }
 
-    get y() {
+    get y(){
         return this.#y;
     }
-
-    get radio() {
+    
+    get radio(){
         return this.#radio;
     }
 
-    get estaHabilitada() {
+    get estaHabilitada(){
         return this.#estaHabilitada;
     }
 
-    get jugador() {
+    get jugador(){
         return this.#jugador;
     }
 
-    set img(img) {
+    set img(img){
         this.#img = img;
     }
 
-    set x(x) {
+    set x(x){
         this.#x = x;
     }
 
-    set y(y) {
+    set y(y){
         this.#y = y;
     }
 
-    set estaHabilitada(booleano) {
+    set estaHabilitada(booleano){
         this.#estaHabilitada = booleano;
     }
 
-    set jugador(jugador) {
+    set jugador(jugador){
         this.#jugador = jugador;
     }
 
@@ -73,27 +73,25 @@ class Ficha {
         this.ctx.closePath();
         this.ctx.save();
         this.ctx.clip();
-        this.ctx.drawImage(this.img, this.x - this.radio, this.y - this.radio, this.radio * 2, this.radio * 2);
+        this.ctx.drawImage(this.img, this.x-this.radio, this.y-this.radio, this.radio*2, this.radio*2);
         this.ctx.restore();
     }
 
-    setPosicion(x, y) {
+    setPosicion(x, y){
         this.x = x;
         this.y = y;
     }
 
-    cursorDentro(x, y) {
-        {
-            let posX = this.x - x;
-            let posY = this.y - y;
-            return Math.sqrt(posX * posX + posY * posY) < this.#radio;
-        }
-    }
+    cursorDentro(x, y){{
+        let posX = this.x - x;
+        let posY = this.y - y;
+        return Math.sqrt(posX * posX + posY * posY) < this.#radio;
+    }}
 
-    resaltar() {
+    resaltar(){
         this.ctx.lineWidth = 6;
         this.ctx.strokeStyle = "yellow";
     }
 }
 
-export { Ficha }
+export {Ficha}
