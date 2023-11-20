@@ -1,5 +1,6 @@
 body{
     margin: 0;
+    overflow-x: hidden;
 }
 
 .full-width{
@@ -41,7 +42,6 @@ header{
 }
 
 .comprar-btn {
-    width: 216px;
     height: 66px;
     border-radius: 111px;
     border: 8px solid #2982FF ;
@@ -55,6 +55,7 @@ header{
     line-height: 94.5%;
     position: relative;
     top: -7px;
+    padding: 0 45px;
 }
 
 .imagen-personajes{
@@ -188,4 +189,217 @@ h1 {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+.fondo-ghost-spidey{
+    position: relative;
+    height: 550px;
+    display: flex;
+    width: 100%;
+    z-index: 6;
+    margin-top: 120px;
+}
+
+.fondo-seccion-4{
+    width: 100%;
+}
+
+.screenshot-top{
+    position: absolute;
+    top: -150px;
+    left: 100px;
+}
+
+.screenshot-center{
+    position: absolute;
+    top: -50px;
+    left: 100px;
+}
+
+.screenshot-bottom{
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
+
+.contenedor-seccion-5{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 750px;
+}
+
+.fondo-seccion-5{
+    background-color: #000;
+    width: 100%;
+    height: 980px;
+    position: absolute;
+    top: -200px;
+    transform: skewY(5deg);
+}
+
+.titulo-seccion-5{
+    color: #FFF;
+    font-family: Lato;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 94.5%;
+    width: 650px;
+    position: relative;
+    top: 100px;
+}
+
+.imagenes-seccion-5{
+    position: relative;
+    top: 150px;
+}
+
+.cielo-seccion-5{
+    position: absolute;
+}
+
+.fondo-uno-seccion-5{
+    position: absolute;
+}
+
+.fondo-dos-seccion-5{
+    position: absolute;
+    z-index: 4;
+}
+
+.larguirucha{
+    position: absolute;
+    top: -100px;
+}
+
+.black-ironman{
+    position: absolute;
+    left: 450px;
+    top: -250px;
+}
+
+.hulk{
+    position: absolute;
+    left: 680px;
+    top: 100px;
+}
+
+.contenedor-seccion-6{
+    display: flex;
+    justify-content: center;
+}
+
+.h1-seccion-6 h1{
+    color: #000;
+    font-family: Lato;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 94.5%;
+}
+
+.subcontenedor-seccion-6{
+    display: flex;
+    justify-content: space-between;
+}
+
+.imagenes-seccion-6 img{
+    margin-top: 100px;
+}
+
+.info-seccion-6 div{
+    width: 500px;
+    height: 250px;
+    margin-top: 150px;
+}
+
+.info-seccion-6 h1{
+    color: #000;
+    font-family: Lato;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 94.5%; /* 37.8px */
+}
+
+.info-seccion-6 p{
+    color: #000;
+    font-family: Lato;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 94.5%; /* 18.9px */
+}
+
+.contenedor-seccion-7{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.fondo-seccion-7{
+    background-color: #000;
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    top: 100px;
+    transform: skewY(5deg);
+}
+
+.subcontenedor-seccion-7{
+    margin-top: 160px;
+}
+
+.subcontenedor-seccion-7 h1{
+    color: #FFF;
+    font-family: Lato;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: relative;
+    width: 800px;
+    margin-bottom: 30px;
+}
+
+.contenedor-seccion-8{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 500px;
+}
+
+.fondo-seccion-8{
+    background-color: #ffffff;
+    width: 100%;
+    height: 500px;
+    top: 30px;
+    position: absolute;
+    transform: skewY(-5deg);
+}
+
+.spyder-left{
+    position: absolute;
+    left: 320px;
+    top: 50px;
+}
+
+.spyder-center{
+    position: absolute;
+    left: 550px;
+    top: 70px;
+}
+
+.spyder-right{
+    position: absolute;
+    left: 970px;
+    top: 100px;
+}
+
+.contenedor-seccion-9{
+    margin-top: 180px;
+    height: 1300px;
+    background: linear-gradient(0deg, #F7E3D8 21.2%, #8FBEFC 81.48%);
+    position: relative;
 }
