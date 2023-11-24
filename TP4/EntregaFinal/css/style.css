@@ -259,20 +259,45 @@ h1 {
 
 .screenshot-top{
     position: absolute;
-    top: -150px;
+    top: 0;
     left: 100px;
+    transition: 200ms;
+    rotate: -5deg;
+    z-index: 10;
+}
+
+.screenshot-top:hover{
+    transform: rotate3d(5,45,-10,15deg);
+    transition: 200ms;
 }
 
 .screenshot-center{
     position: absolute;
-    top: -50px;
-    left: 100px;
+    top: 100px;
+    left: 120px;
+    rotate: -10deg;
+    z-index: 11;
+    transition: 200ms;
 }
+
+.screenshot-center:hover{
+    transform: rotate3d(5,45,-10,15deg);
+    transition: 200ms;
+}
+
 
 .screenshot-bottom{
     position: absolute;
-    top: 100px;
-    left: 100px;
+    top: 260px;
+    left: 140px;
+    rotate: -15deg;
+    z-index: 12;
+    transition: 200ms;
+}
+
+.screenshot-bottom:hover{
+    transform: rotate3d(5,45,-10,15deg);
+    transition: 200ms;
 }
 
 .contenedor-seccion-5{

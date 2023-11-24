@@ -18,6 +18,11 @@ function startPage(){
     //Seccion duende
     let duende = document.querySelector(".duende");
 
+    //Seccion spidey
+    let screenUno = document.querySelector(".screenshot-top");
+    let screenDos = document.querySelector(".screenshot-center");
+    let screenTres = document.querySelector(".screenshot-bottom");
+
     //Seccion cards
     let cardUno = document.querySelector(".card-1");
     let cardDos = document.querySelector(".card-2");
@@ -78,6 +83,13 @@ function startPage(){
             cardTres.style.transform = `translateY(0)`;
         }
 
+
+        if(window.scrollY > 2000 && window.scrollY < 3400){
+            screenUno.style.top = `${-60 + (window.scrollY/60)}px`;
+            screenDos.style.top = `${100 + (window.scrollY/60)}px`;
+            screenTres.style.top = `${260 + (window.scrollY/60)}px`;
+        }
+
         //Seccion amigos
         if(window.scrollY < 3500){
             contenedorImagenes.classList.add("display-none");
@@ -128,9 +140,6 @@ function startPage(){
             imagen4.style.opacity = 0;
         }
 
-        if(window.scrollY < 6300){
-            contenedorImagenes.classList.remove("display-none");
-        }
         if(window.scrollY > 6500){
             contenedorImagenes.classList.add("display-none");
         }
