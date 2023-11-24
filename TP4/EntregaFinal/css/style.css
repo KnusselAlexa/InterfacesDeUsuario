@@ -12,8 +12,7 @@ body{
 }
 
 .display-none{
-    transition: 1000ms;
-    opacity: 0;
+    display: none;
 }
 
 header{
@@ -62,6 +61,19 @@ header{
     top: -7px;
     padding: 0 45px;
     -webkit-text-stroke: 1.5px #02187E;
+    transition: 200ms;
+    cursor: pointer;
+}
+
+.comprar-btn:hover{
+    border: 8px solid #FFE901;
+    border-radius: 111px 50px 111px 50px;
+    background: #2982FF;
+    color: #887d00;
+    -webkit-text-stroke: 1.5px #d0bf00;
+    box-shadow: 4px 5px 0px 0px #887d00;
+    transition: 300ms;
+    transform: scale(1.05);
 }
 
 .imagen-personajes{
@@ -342,8 +354,7 @@ h1 {
 }
 
 .subcontenedor-seccion-6{
-    display: flex;
-    justify-content: space-between;
+    position: relative;
 }
 
 .imagenes-seccion-6{
@@ -361,6 +372,8 @@ h1 {
 }
 
 .info-seccion-6{
+    position: relative;
+    left: 620px;
     display: flex;
     flex-direction: column;
     gap: 200px;

@@ -24,6 +24,7 @@ function startPage(){
     let cardTres = document.querySelector(".card-3");
 
     //Seccion amigos
+    let contenedorImagenes = document.querySelector(".imagenes-seccion-6");
     let imagen1 = document.querySelector(".imagen-1-seccion-6");
     let imagen2 = document.querySelector(".imagen-2-seccion-6");
     let imagen3 = document.querySelector(".imagen-3-seccion-6");
@@ -46,7 +47,6 @@ function startPage(){
         }
 
         //Seccion hero
-  
         if(window.scrollY >= 0 && window.scrollY < 600){
             spiderIzq.style.transform = `translateY(${window.scrollY - (window.scrollY*0.8)}px) 
                                          translateX(${-window.scrollY + (window.scrollY*0.90)}px)`;
@@ -78,17 +78,14 @@ function startPage(){
             cardTres.style.transform = `translateY(0)`;
         }
 
-
-
-
-
-
-
-
-
-
-
         //Seccion amigos
+        if(window.scrollY < 3500){
+            contenedorImagenes.classList.add("display-none");
+        }
+        if(window.scrollY > 3600){
+            contenedorImagenes.classList.remove("display-none");
+        }
+
         if(window.scrollY < 3800){
             imagen1.style.opacity = 0;
             imagen2.style.opacity = 0;
@@ -129,6 +126,13 @@ function startPage(){
             imagen2.style.opacity = 0;
             imagen3.style.opacity = 0;
             imagen4.style.opacity = 0;
+        }
+
+        if(window.scrollY < 6300){
+            contenedorImagenes.classList.remove("display-none");
+        }
+        if(window.scrollY > 6500){
+            contenedorImagenes.classList.add("display-none");
         }
     }
 }
