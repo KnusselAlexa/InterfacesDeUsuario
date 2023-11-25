@@ -35,6 +35,62 @@ function startPage(){
     let imagen3 = document.querySelector(".imagen-3-seccion-6");
     let imagen4 = document.querySelector(".imagen-4-seccion-6");
 
+    //Seccion spyders
+    let fondoSpyders = document.querySelector(".fondo-seccion-8-hover");
+    let spyderIzq = document.querySelector(".spyder-left");
+    let spyderCen = document.querySelector(".spyder-center");
+    let spyderDer = document.querySelector(".spyder-right");
+
+    spyderIzq.addEventListener('mouseover', () => {
+        console.log("mouseover izq");
+        spyderIzq.style.transform = "scale(1.2)";
+        spyderCen.style.opacity = 0.5;
+        spyderDer.style.opacity = 0.5;
+        fondoSpyders.style.opacity = 1;
+        fondoSpyders.style.background = "url(../img/fondo-spyder-izq.png)";
+    });
+
+    spyderIzq.addEventListener('mouseleave', () => {
+        console.log("mouseleave izq");
+        spyderIzq.style.transform = "scale(1)";
+        spyderCen.style.opacity = 1;
+        spyderDer.style.opacity = 1;
+        fondoSpyders.style.opacity = 0;
+    });
+
+    spyderCen.addEventListener('mouseover', () => {
+        console.log("mouseover cen");
+        spyderCen.style.transform = "scale(1.2)";
+        spyderIzq.style.opacity = 0.5;
+        spyderDer.style.opacity = 0.5;
+        fondoSpyders.style.opacity = 1;
+        fondoSpyders.style.background = "url(../img/fondo-spyder-cen.png)";
+    });
+
+    spyderCen.addEventListener('mouseleave', () => {
+        console.log("mouseleave cen");
+        spyderCen.style.transform = "scale(1)";
+        spyderIzq.style.opacity = 1;
+        spyderDer.style.opacity = 1;
+        fondoSpyders.style.opacity = 0;
+    });
+
+    spyderDer.addEventListener('mouseover', () => {
+        console.log("mouseover der");
+        spyderDer.style.transform = "scale(1.2)";
+        spyderIzq.style.opacity = 0.5;
+        spyderCen.style.opacity = 0.5;
+        fondoSpyders.style.opacity = 1;
+        fondoSpyders.style.background = "url(../img/fondo-spyder-der.png)";
+    });
+
+    spyderDer.addEventListener('mouseleave', () => {
+        console.log("mouseleave der");
+        spyderDer.style.transform = "scale(1)";
+        spyderIzq.style.opacity = 1;
+        spyderCen.style.opacity = 1;
+        fondoSpyders.style.opacity = 0;
+    });
 
     onscroll = (e) => {
         console.log(window.scrollY);
