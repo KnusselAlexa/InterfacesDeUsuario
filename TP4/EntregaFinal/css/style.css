@@ -654,3 +654,72 @@ h1 {
 .footer-bottom{
     margin-top: 20px;
 }
+
+.sprite-uno {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:115px;
+    height:182px;
+    margin:auto;  
+    background:url(../img/sprite-uno.png) repeat-x;
+    position:absolute;
+    bottom:275px;
+    right: 210px;
+    z-index: 10;
+  }
+
+  .sprite-uno:hover{
+    animation:walk-uno .8s steps(12) infinite;
+  }
+
+  @keyframes walk-uno {
+    0% { background-position:0 }
+    100% { background-position:-1464px }
+  }
+
+  .sprite-dos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:150px;
+    height:160px;
+    margin:auto;  
+    background:url(../img/sprite-dos.png) repeat-x;
+    position:absolute;
+    bottom: 160px;
+    left: 600px;
+    z-index: 10;
+  }
+
+  .sprite-dos:hover{
+    animation:walk-dos 1.1s steps(11) infinite;
+  }
+
+  @keyframes walk-dos {
+    0% { background-position:0 }
+    100% { background-position:-1719px }
+  }
+
+  .sprite-tres {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:106px;
+    height:202px;
+    margin:auto;  
+    background:url(../img/sprite-tres.png) repeat-x;
+    position:absolute;
+    bottom: 140px;
+    left: 35px;
+    z-index: 10;
+  }
+
+  .sprite-tres:hover{
+    animation:climb 1.1s steps(8) infinite;
+  }
+
+  @keyframes climb {
+    0% { background-position:0 }
+    100% { background-position:-848px }
+  }
