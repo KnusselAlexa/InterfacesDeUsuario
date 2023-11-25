@@ -28,6 +28,28 @@ function startPage(){
     let cardDos = document.querySelector(".card-2");
     let cardTres = document.querySelector(".card-3");
 
+    //Seccion vengadores
+    let hulk = document.querySelector(".hulk");
+    let blackIronman = document.querySelector(".black-ironman")
+    let larguirucha = document.querySelector(".larguirucha");
+    let fondoUno = document.querySelector(".fondo-uno-seccion-5");
+    let fondoDos = document.querySelector(".fondo-dos-seccion-5");
+    fondoDos.addEventListener("mousemove", (e) => {
+        let _w = window.innerWidth/2;
+        let _h = window.innerHeight/2;
+        let _mouseX = e.clientX;
+        let _mouseY = e.clientY;
+        hulk.style.left = `${680 - (_mouseX - _w) * 0.005}px`;
+        hulk.style.top = `${100 - (_mouseY - _h) * 0.005}px`;
+        blackIronman.style.left = `${450 - (_mouseX - _w) * 0.006}px`;
+        blackIronman.style.top = `${-250 - (_mouseY - _h) * 0.006}px`;
+        larguirucha.style.left = `${-(_mouseX - _w) * 0.005}px`;
+        larguirucha.style.top = `${-100 - (_mouseY - _h) * 0.005}px`;
+        fondoUno.style.left = `${-(_mouseX - _w) * 0.003}px`;
+        fondoUno.style.top = `${- (_mouseY - _h) * 0.003}px`;
+        
+    });
+
     //Seccion amigos
     let contenedorImagenes = document.querySelector(".imagenes-seccion-6");
     let imagen1 = document.querySelector(".imagen-1-seccion-6");
@@ -130,6 +152,7 @@ function startPage(){
 
         }
 
+        //Seccion 3 screenshots
         if(window.scrollY >= 1600){
             cardUno.style.opacity = 1;
             cardUno.style.transform = `translateY(0)`;
@@ -140,10 +163,10 @@ function startPage(){
         }
 
 
-        if(window.scrollY > 2000 && window.scrollY < 3400){
-            screenUno.style.top = `${-60 + (window.scrollY/60)}px`;
-            screenDos.style.top = `${100 + (window.scrollY/60)}px`;
-            screenTres.style.top = `${260 + (window.scrollY/60)}px`;
+        if(window.scrollY > 1000 && window.scrollY < 3400){
+            screenUno.style.top = `${-60 + (window.scrollY/57)}px`;
+            screenDos.style.top = `${100 + (window.scrollY/57)}px`;
+            screenTres.style.top = `${260 + (window.scrollY/57)}px`;
         }
 
         //Seccion amigos
