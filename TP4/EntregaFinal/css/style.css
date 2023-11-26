@@ -40,6 +40,7 @@ header{
 .menu-btn{
     width: 42px;
     height: 34px;
+    cursor: pointer;
 }
 
 .menu-btn-simple-top{
@@ -82,7 +83,8 @@ header{
 .logo-img{
     position: relative;
     top: 180px;
-    left: 100px;
+    left: 90px;
+    cursor: pointer;
 }
 
 .comprar-btn {
@@ -115,6 +117,78 @@ header{
     box-shadow: 4px 5px 0px 0px #887d00;
     transition: 300ms;
     transform: scale(1.05);
+}
+
+.navbar{
+    position: fixed;
+    height: 100vh;
+    width: 0;
+    background-color: #2982FFCD;
+    z-index: 50;
+    transition: 200ms;
+    box-shadow: 4px 0px 5px 0px #3d8eff;
+}
+
+.nav-estilo{
+    position: absolute;
+    height: 30px;
+    width: 140px;
+    z-index: 60;
+}
+
+.nav-estilo span{
+    font-family: Lato;
+    font-size: 20px;
+    color: #c9e0ff;
+    border: 3px solid #c9e0ff;
+    border-radius: 50px;
+    padding: 2px 15px;
+    background-color: #02187E;
+    cursor: pointer;
+}
+
+.nav-uno{
+    top: 50px;
+    left: -300px;
+    transition: 500ms;
+}
+
+.nav-dos{
+    top: 90px;
+    left: -600px;
+    transition: 800ms;
+}
+
+.nav-tres{
+    top: 130px;
+    left: -900px;
+    transition: 1100ms;
+}
+
+.nav-cuatro{
+    top: 170px;
+    left: -1200px;
+    transition: 1400ms;
+}
+
+.width-200{
+    width: 200px;
+}
+
+.translate-300{
+    transform: translateX(330px);
+}
+
+.translate-600{
+    transform: translateX(630px);
+}
+
+.translate-900{
+    transform: translateX(930px);
+}
+
+.translate-1200{
+    transform: translateX(1230px);
 }
 
 .imagen-personajes{

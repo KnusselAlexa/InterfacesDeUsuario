@@ -12,6 +12,11 @@ function startPage(){
     let menuSimpleMid = document.querySelector(".menu-btn-simple-mid");
     let menuSimpleBottom = document.querySelector(".menu-btn-simple-bottom");
     let rects = document.querySelectorAll(".rect");
+    let navbar = document.querySelector(".navbar");
+    let navUno = document.querySelector(".nav-uno");
+    let navDos = document.querySelector(".nav-dos");
+    let navTres = document.querySelector(".nav-tres");
+    let navCuatro = document.querySelector(".nav-cuatro");
 
     menuBtn.addEventListener("click", ()=>{
         menuSimpleMid.classList.toggle("display-none");
@@ -21,6 +26,11 @@ function startPage(){
         rects.forEach(e => {
             e.classList.toggle("rect-close");
         });
+        navbar.classList.toggle("width-200");
+        navUno.classList.toggle("translate-300");
+        navDos.classList.toggle("translate-600");
+        navTres.classList.toggle("translate-900");
+        navCuatro.classList.toggle("translate-1200");
     })
 
     //Seccion hero
