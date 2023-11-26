@@ -6,6 +6,23 @@ function startPage(){
 
     let logo = document.querySelector(".logo-img");
 
+    //Menu hamburguesa
+    let menuBtn = document.querySelector(".menu-btn");
+    let menuSimpleTop = document.querySelector(".menu-btn-simple-top");
+    let menuSimpleMid = document.querySelector(".menu-btn-simple-mid");
+    let menuSimpleBottom = document.querySelector(".menu-btn-simple-bottom");
+    let rects = document.querySelectorAll(".rect");
+
+    menuBtn.addEventListener("click", ()=>{
+        menuSimpleMid.classList.toggle("display-none");
+        menuSimpleTop.classList.toggle("rotate-btn-top");
+        menuSimpleBottom.classList.toggle("rotate-btn-bottom");
+        console.log("btn clicked");
+        rects.forEach(e => {
+            e.classList.toggle("rect-close");
+        });
+    })
+
     //Seccion hero
     let cielo = document.querySelector(".fondo-cielo");
     let edificioIzq = document.querySelector(".edificio-izq");
